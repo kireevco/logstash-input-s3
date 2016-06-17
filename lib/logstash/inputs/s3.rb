@@ -193,6 +193,7 @@ class LogStash::Inputs::S3 < LogStash::Inputs::Base
 
           event.set("cloudfront_version", metadata[:cloudfront_version]) unless metadata[:cloudfront_version].nil?
           event.set("cloudfront_fields", metadata[:cloudfront_fields]) unless metadata[:cloudfront_fields].nil?
+          event.set("metadata", metadata)
 
           queue << event
         end
